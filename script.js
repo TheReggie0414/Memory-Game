@@ -24,9 +24,7 @@ const startButton = function () {
     });
 };
 
-let seconds = 0;
-let minutes = 2;
-let hours = 0;
+let minutes = 3;
 
 function updateTimer(timer) {
     if (seconds > 0) {
@@ -129,7 +127,7 @@ const startGame = function () {
         });
     });
 
-    const timerTime = 120000;
+    const timerTime = 180000;
 
     setTimeout(() => {
         const audioEndGame = new Audio('./mp3/end_game.mp3');
