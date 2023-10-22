@@ -24,7 +24,9 @@ const startButton = function () {
     });
 };
 
+let seconds = 0;
 let minutes = 3;
+let hours = 0;
 
 function updateTimer(timer) {
     if (seconds > 0) {
