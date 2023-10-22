@@ -56,6 +56,8 @@ const startGame = function () {
     let firstCard = null;
     let secondCard = null;
     let visibleCardCount = 0;
+    const matchedCards = {};
+
     values.forEach(value => {
         const card = document.createElement("div");
         card.className = "card";
@@ -85,14 +87,20 @@ const startGame = function () {
                     if (firstCard.getAttribute("data-value") === secondCard.getAttribute("data-value")) {
                         const audioClickOk = new Audio('./mp3/click_ok.mp3');
                         audioClickOk.play();
+                        matchedCards[firstCard.getAttribute("data-value")] = true;
+                        matchedCards[secondCard.getAttribute("data-value")] = true;
                     }
                 }, 200);
                 setTimeout(() => {
                     if (firstCard.getAttribute("data-value") !== secondCard.getAttribute("data-value")) {
                         const audioClickError = new Audio('./mp3/click_error.wav');
                         audioClickError.play();
-                        firstCard.style.display = "none";
-                        secondCard.style.display = "none";
+                        if (!matchedCards[firstCard.getAttribute("data-value")]) {
+                            firstCard.style.display = "none";
+                        }
+                        if (!matchedCards[secondCard.getAttribute("data-value")]) {
+                            secondCard.style.display = "none";
+                        }
                         visibleCardCount -= 2;
                     }
                     firstCard = null;
@@ -108,8 +116,8 @@ const startGame = function () {
                         const timerField = document.getElementById("timer-field");
                         timerField.style.display = "none";
                         const finishGame = document.createElement("p");
-                        finishGame.className = ("finish-game-title");
-                        finishGame.textContent = "Поздравляем вы победили!";
+                        finishGame.className = "finish-game-title";
+                        finishGame.textContent = "Congratulations, you won!";
                         const victory = document.getElementById("finish-game");
                         victory.appendChild(finishGame);
                     }, 1000);
@@ -131,8 +139,8 @@ const startGame = function () {
         const timerField = document.getElementById("timer-field");
         timerField.style.display = "none";
         const endGame = document.createElement("p");
-        endGame.className = ("end-game");
-        endGame.innerHTML = "Игра окончена!<br><br> Время вышло."
+        endGame.className = "end-game";
+        endGame.innerHTML = "Game over!<br><br> Time's up."
         const badEnd = document.getElementById("bad-end");
         badEnd.appendChild(endGame);
         setTimeout(() => {
