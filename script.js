@@ -6,12 +6,12 @@ const startButton = function () {
     startButton.innerHTML = `<span class="button-text">GET STARTED</span>`;
     const startdiv = document.getElementById("start");
     startdiv.appendChild(startButton);
-    document.querySelector("#card-container").style.display = "none";
+    document.querySelector("#cardContainer").style.display = "none";
     startButton.addEventListener("click", () => {
         const audioStartGame = new Audio('./mp3/start_game.mp3');
         audioStartGame.play();
         startGame();
-        document.querySelector("#card-container").style.display = "grid";
+        document.querySelector("#cardContainer").style.display = "grid";
         document.querySelector("#memory-logo").style.display = "none";
         document.querySelector(".container-background").style.display = "block";
         startButton.style.display = "none";
@@ -25,7 +25,7 @@ const startButton = function () {
 };
 
 let seconds = 0;
-let minutes = 3;
+let minutes = 4;
 let hours = 0;
 
 function updateTimer(timer) {
@@ -111,7 +111,7 @@ const startGame = function () {
                     setTimeout(() => {
                         const audioFinishGame = new Audio('./mp3/finish_game.mp3');
                         audioFinishGame.play();
-                        const gameField = document.getElementById("card-container");
+                        const gameField = document.getElementById("cardContainer");
                         gameField.style.display = "none";
                         const timerField = document.getElementById("timer-field");
                         timerField.style.display = "none";
@@ -129,12 +129,12 @@ const startGame = function () {
         });
     });
 
-    const timerTime = 180000;
+    const timerTime = 240000;
 
     setTimeout(() => {
         const audioEndGame = new Audio('./mp3/end_game.mp3');
         audioEndGame.play();
-        const gameField = document.getElementById("card-container");
+        const gameField = document.getElementById("cardContainer");
         gameField.style.display = "none";
         const timerField = document.getElementById("timer-field");
         timerField.style.display = "none";
