@@ -25,6 +25,10 @@ The project is created using the following technologies:
 
 To run the project, simply open the index.html file in your web browser.
 
+## Figma design
+
+https://www.figma.com/file/aBIa1nUvaphnLNmBlOg13Z/Untitled?type=design&node-id=0-1&mode=design&t=LhUm6pbxCaqGd57H-0
+
 ## Demonstration
 
 https://thereggie0414.github.io/Memory-Game/
