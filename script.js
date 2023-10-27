@@ -6,12 +6,12 @@ const startButton = function () {
     startButton.innerHTML = `<span class="button-text">GET STARTED</span>`;
     const startdiv = document.getElementById("start");
     startdiv.appendChild(startButton);
-    document.querySelector("#cardContainer").style.display = "none";
+    document.querySelector("#card-container").style.display = "none";
     startButton.addEventListener("click", () => {
         const audioStartGame = new Audio('./mp3/start_game.mp3');
         audioStartGame.play();
         startGame();
-        document.querySelector("#cardContainer").style.display = "grid";
+        document.querySelector("#card-container").style.display = "grid";
         document.querySelector("#memory-logo").style.display = "none";
         document.querySelector(".container-background").style.display = "block";
         startButton.style.display = "none";
@@ -61,7 +61,7 @@ const startGame = function () {
     values.forEach(value => {
         const card = document.createElement("div");
         card.className = "card";
-        cardContainer.appendChild(card);
+        card-container.appendChild(card);
         const cardImg = document.createElement("img");
         cardImg.className = "card-img";
         cardImg.src = `images/${value}.png`;
@@ -111,7 +111,7 @@ const startGame = function () {
                     setTimeout(() => {
                         const audioFinishGame = new Audio('./mp3/finish_game.mp3');
                         audioFinishGame.play();
-                        const gameField = document.getElementById("cardContainer");
+                        const gameField = document.getElementById("card-container");
                         gameField.style.display = "none";
                         const timerField = document.getElementById("timer-field");
                         timerField.style.display = "none";
@@ -134,7 +134,7 @@ const startGame = function () {
     setTimeout(() => {
         const audioEndGame = new Audio('./mp3/end_game.mp3');
         audioEndGame.play();
-        const gameField = document.getElementById("cardContainer");
+        const gameField = document.getElementById("card-container");
         gameField.style.display = "none";
         const timerField = document.getElementById("timer-field");
         timerField.style.display = "none";
