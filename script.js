@@ -61,7 +61,7 @@ const startGame = function () {
     values.forEach(value => {
         const card = document.createElement("div");
         card.className = "card";
-        card-container.appendChild(card);
+        cardContainer.appendChild(card);
         const cardImg = document.createElement("img");
         cardImg.className = "card-img";
         cardImg.src = `images/${value}.png`;
