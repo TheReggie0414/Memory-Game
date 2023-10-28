@@ -50,7 +50,7 @@ function updateTimer(timer) {
 }
 
 const startGame = function () {
-    const values = Array.from({ length: 28 }, (_, index) => Math.floor(index / 2) + 1);
+    let values = Array.from({ length: 28 }, (_, index) => Math.floor(index / 2) + 1);
     values.sort(() => Math.random() - 0.5);
 
     let firstCard = null;
